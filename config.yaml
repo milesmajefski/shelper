@@ -1,0 +1,5 @@
+commands:
+- description: Hello World
+  cmd: echo "Hello World!"
+- description: Open file in notepad
+  cmd: echo "Hello World!" > file.txt && start file.txt

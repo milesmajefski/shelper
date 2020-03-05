@@ -1,5 +1,23 @@
 commands:
 - description: Hello World
-  cmd: echo "Hello World!"
+  lines: 
+  - echo "Hello World!"
 - description: Open file in notepad
-  cmd: echo "Hello World!" > file.txt && start file.txt
+  lines: 
+  - echo "Hello World!" > file.txt && start file.txt
+- description: maven test build and run
+  lines: 
+  - echo Current directory %CD%
+  - mvn clean
+  - mvn compile
+  - mvn compiler:testCompile
+  - mvn resources:testResources
+  - mvn -Dacb.webdriver.driver.default=chrome surefire:test -P local-multi-threaded
+- description: maven run one test
+  lines:
+  - echo Current directory %CD%
+  - mvn clean
+  - mvn compile
+  - mvn compiler:testCompile
+  - mvn resources:testResources
+  - mvn surefire:test -P local-single-threaded -Dtest=com.activebuilding.tests.resident.CommunityWallTest#testThatAResidentCanPostAnUpdateOnTheCommunityWall

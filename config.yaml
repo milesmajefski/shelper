@@ -21,3 +21,10 @@ commands:
   - mvn compiler:testCompile
   - mvn resources:testResources
   - mvn surefire:test -P local-single-threaded -Dtest=com.activebuilding.tests.resident.CommunityWallTest#testThatAResidentCanPostAnUpdateOnTheCommunityWall
+- description: maven clean and compile
+  lines:
+  - mvn clean
+  - mvn compile
+  - mvn compiler:testCompile
+  - mvn resources:testResources
+
